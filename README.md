@@ -5,11 +5,10 @@
 **Clean Architecture Demo** là một RESTful API minh hoạ cách tổ chức mã nguồn theo _Clean Architecture_ với Spring Boot, JPA và SQL Server. Mục tiêu của dự án là:
 
 - **Tách biệt rõ ràng** giữa các tầng nghiệp vụ (domain), use case (application) và các adapter (infrastructure, frameworks).
-- **Dễ dàng mở rộng** và bảo trì: khi thêm tính năng hoặc thay đổi công nghệ, chỉ cần cập nhật adapter tương ứng mà không ảnh hưởng đến business logic.
+- **Dễ dàng mở rộng và bảo trì**: khi thêm tính năng hoặc thay đổi công nghệ, chỉ cần cập nhật adapter tương ứng mà không ảnh hưởng đến business logic.
 - **Tăng khả năng kiểm thử**: các lớp nghiệp vụ và use case hoàn toàn độc lập, có thể viết unit test mà không cần khởi động Spring context hay kết nối database thật.
 
-Dự án cung cấp các chức năng cơ bản về quản lý `User`:
-
+## Tính năng
 1. **Tạo User**  
    - Endpoint: `POST /users`  
    - Tham số query: `name`, `email`  
@@ -25,4 +24,18 @@ Dự án cung cấp các chức năng cơ bản về quản lý `User`:
 
 ### Kiến trúc tổng quan
 
-![image](https://github.com/user-attachments/assets/be095c65-1f89-4890-b406-73d3cf78902b)
+clean-architecture-demo/
+├─ .mvn/                                                                # Maven wrapper config (commit vào repo)
+├─ src/
+│ ├─ main/
+│ │ ├─ java/com/example/cleanarchitecturedemo
+│ │ │ ├─ adapters/                                                      # Controllers & Gateways
+│ │ │ ├─ core/                                                          # Entities, Interfaces, Use Cases
+│ │ │ ├─ frameworks/                                                    # DB, UI framework code
+│ │ │ └─ CleanarchitecturedemoApplication.java
+│ │ └─ resources/                                                       # application.properties, templates, static...
+│ └─ test/ # Unit & integration tests
+├─ mvnw                                                                 # Maven wrapper script (Linux/Mac)
+/mvnw.cmd                                                               # Maven wrapper script (Windows)
+├─ pom.xml                                                              # Maven build file
+└─ .gitignore
