@@ -2,7 +2,7 @@
 
 ## Mô tả dự án
 
-**Clean Architecture Demo** là một RESTful API minh hoạ cách tổ chức mã nguồn theo _Clean Architecture_ với Spring Boot, JPA và SQL Server. Mục tiêu của dự án là:
+**Clean Architecture Demo** là một minh hoạ cách tổ chức mã nguồn theo kiến trúc _Clean Architecture_, sử dụng Spring Boot, JPA và SQL Server với mục tiêu là:
 
 - **Tách biệt rõ ràng** giữa các tầng nghiệp vụ (domain), use case (application) và các adapter (infrastructure, frameworks).
 - **Dễ dàng mở rộng và bảo trì**: khi thêm tính năng hoặc thay đổi công nghệ, chỉ cần cập nhật adapter tương ứng mà không ảnh hưởng đến business logic.
@@ -22,10 +22,10 @@
    - Endpoint: `GET /users/{id}`  
    - Trả về đối tượng `User` hoặc `404 Not Found` nếu không tồn tại
 
-### Kiến trúc tổng quan
-
+## Kiến trúc tổng quan
+```
 clean-architecture-demo/
-├─ .mvn/                                                                # Maven wrapper config (commit vào repo)
+├─ .mvn/                                                                # Maven wrapper config 
 ├─ src/
 │ ├─ main/
 │ │ ├─ java/com/example/cleanarchitecturedemo
@@ -34,8 +34,9 @@ clean-architecture-demo/
 │ │ │ ├─ frameworks/                                                    # DB, UI framework code
 │ │ │ └─ CleanarchitecturedemoApplication.java
 │ │ └─ resources/                                                       # application.properties, templates, static...
-│ └─ test/ # Unit & integration tests
+│ └─ test/                                                              # Unit & integration tests
 ├─ mvnw                                                                 # Maven wrapper script (Linux/Mac)
-/mvnw.cmd                                                               # Maven wrapper script (Windows)
+├─ mvnw.cmd                                                             # Maven wrapper script (Windows)
 ├─ pom.xml                                                              # Maven build file
 └─ .gitignore
+```
