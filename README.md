@@ -40,3 +40,12 @@ clean-architecture-demo/
 ├─ pom.xml                                                              # Maven build file
 └─ .gitignore
 ```
+
+## Công nghệ & Công cụ
+- Java 24
+- Spring Boot 3.x  
+- Jakarta JPA (EntityManager)  
+- Database: SQL Server
+- Maven (wrapper `mvnw`, `mvnw.cmd`)
+- Postman
+- Git & GitHub  
