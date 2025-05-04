@@ -13,9 +13,7 @@ public class UserController {
     private final CreateUserUseCase createUserUseCase;
     private final UserRepository userRepository;
 
-    // Inject cả hai bean
-    public UserController(CreateUserUseCase createUserUseCase,
-                          UserRepository userRepository) {
+    public UserController(CreateUserUseCase createUserUseCase, UserRepository userRepository) {
         this.createUserUseCase = createUserUseCase;
         this.userRepository = userRepository;
     }
@@ -26,7 +24,6 @@ public class UserController {
         return createUserUseCase.execute(name, email);
     }
 
-    // Thêm GET /users/{id}
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable String id) {
         User user = userRepository.findById(id);
@@ -36,7 +33,6 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    // Thêm GET /users
     @GetMapping
     public List<User> listAll() {
         return userRepository.findAll();
